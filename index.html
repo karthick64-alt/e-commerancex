@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopHub - Your Ultimate Shopping Destination</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="alternate icon" href="https://fav.farm/🛒">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/home.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="index.html">
+                <i class="bi bi-bag-heart-fill me-2"></i>ShopHub
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button" data-bs-toggle="dropdown">
+                            Categories
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="products.html?category=electronics">Electronics</a></li>
+                            <li><a class="dropdown-item" href="products.html?category=fashion">Fashion</a></li>
+                            <li><a class="dropdown-item" href="products.html?category=home">Home & Living</a></li>
+                            <li><a class="dropdown-item" href="products.html?category=beauty">Beauty & Health</a></li>
+                            <li><a class="dropdown-item" href="products.html?category=sports">Sports & Fitness</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <!-- Search Bar -->
+                    <div class="search-container me-3">
+                        <input type="text" class="form-control" id="searchInput" placeholder="Search products...">
+                        <div class="search-results" id="searchResults"></div>
+                    </div>
+                    <!-- Wishlist -->
+                    <a href="wishlist.html" class="btn btn-outline-primary me-2 position-relative">
+                        <i class="bi bi-heart"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="wishlistCount">0</span>
+                    </a>
+                    <!-- Cart -->
+                    <a href="cart.html" class="btn btn-outline-primary me-2 position-relative">
+                        <i class="bi bi-cart3"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cartCount">0</span>
+                    </a>
+                    <!-- User Account -->
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown">
+                            <i class="bi bi-person-circle"></i> Account
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="login.html">Login</a></li>
+                            <li><a class="dropdown-item" href="register.html">Register</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="dashboard.html">My Dashboard</a></li>
+                            <li><a class="dropdown-item" href="orders.html">My Orders</a></li>
+                            <li><a class="dropdown-item" href="wishlist.html">Wishlist</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Banner Slider -->
+    <section class="banner-slider">
+        <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="carousel-content bg-gradient-primary">
+                        <div class="container">
+                            <div class="row align-items-center min-vh-50">
+                                <div class="col-lg-6">
+                                    <h2 class="display-4 fw-bold text-white mb-4">Summer Sales </h2>
+                                    <p class="lead text-white mb-4">Discover amazing deals on fashion, electronics, and more!</p>
+                                    <a href="products.html" class="btn btn-light btn-lg">Shop Now</a>
+                                </div>
+                                <div class="col-lg-6 text-center">
+                                    <img src="https://images.unsplash.com/photo-1607082349566-187342175e2f?w=800&h=400&fit=crop" alt="Summer Sale" class="img-fluid rounded">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-content bg-gradient-success">
+                        <div class="container">
+                            <div class="row align-items-center min-vh-50">
+                                <div class="col-lg-6">
+                                    <h2 class="display-4 fw-bold text-white mb-4">New Arrivals</h2>
+                                    <p class="lead text-white mb-4">Check out our latest collection of trendy products!</p>
+                                    <a href="products.html" class="btn btn-light btn-lg">Explore</a>
+                                </div>
+                                <div class="col-lg-6 text-center">
+                                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=400&fit=crop" alt="New Arrivals" class="img-fluid rounded">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-content bg-gradient-warning">
+                        <div class="container">
+                            <div class="row align-items-center min-vh-50">
+                                <div class="col-lg-6">
+                                    <h2 class="display-4 fw-bold text-white mb-4">Free Shipping on Orders Over $50</h2>
+                                    <p class="lead text-white mb-4">Shop now and get free delivery on your favorite items!</p>
+                                    <a href="products.html" class="btn btn-light btn-lg">Start Shopping</a>
+                                </div>
+                                <div class="col-lg-6 text-center">
+                                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=400&fit=crop" alt="Free Shipping" class="img-fluid rounded">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Category Showcase -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h1 class="fw-bold mb-0">Shop by Category</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4 col-lg-2">
+                    <a href="products.html?category=electronics" class="category-card text-decoration-none">
+                        <div class="card h-100 border-0 shadow-sm hover-lift">
+                            <div class="card-body text-center">
+                                <img src="https://images.unsplash.com/photo-1498049794561-7780e7231661?w=300&h=200&fit=crop" alt="Electronics" class="img-fluid mb-3 rounded">
+                                <h5 class="card-title">Electronics</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-lg-2">
+                    <a href="products.html?category=fashion" class="category-card text-decoration-none">
+                        <div class="card h-100 border-0 shadow-sm hover-lift">
+                            <div class="card-body text-center">
+                                <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=300&h=200&fit=crop" alt="Fashion" class="img-fluid mb-3 rounded">
+                                <h5 class="card-title">Fashion</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-lg-2">
+                    <a href="products.html?category=home" class="category-card text-decoration-none">
+                        <div class="card h-100 border-0 shadow-sm hover-lift">
+                            <div class="card-body text-center">
+                                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=300&h=200&fit=crop" alt="Home & Living" class="img-fluid mb-3 rounded">
+                                <h5 class="card-title">Home & Living</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-lg-2">
+                    <a href="products.html?category=beauty" class="category-card text-decoration-none">
+                        <div class="card h-100 border-0 shadow-sm hover-lift">
+                            <div class="card-body text-center">
+                                <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=300&h=200&fit=crop" alt="Beauty" class="img-fluid mb-3 rounded">
+                                <h5 class="card-title">Beauty & Health</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-lg-2">
+                    <a href="products.html?category=sports" class="category-card text-decoration-none">
+                        <div class="card h-100 border-0 shadow-sm hover-lift">
+                            <div class="card-body text-center">
+                                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=200&fit=crop" alt="Sports" class="img-fluid mb-3 rounded">
+                                <h5 class="card-title">Sports & Fitness</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-lg-2">
+                    <a href="products.html?category=books" class="category-card text-decoration-none">
+                        <div class="card h-100 border-0 shadow-sm hover-lift">
+                            <div class="card-body text-center">
+                                <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=300&h=200&fit=crop" alt="Books" class="img-fluid mb-3 rounded">
+                                <h5 class="card-title">Books</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Today's Deals Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2 class="fw-bold">Today's Deals</h2>
+                <a href="products.html?filter=deals" class="btn btn-outline-primary mt-3">View All</a>
+            </div>
+            <div class="row g-4" id="dealsProducts">
+                <!-- Products loaded via JS -->
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Trending Items -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2 class="fw-bold">Trending Now</h2>
+                <a href="products.html?filter=trending" class="btn btn-outline-primary mt-3">View All</a>
+            </div>
+            <div class="row g-4" id="trendingProducts">
+                <!-- Products loaded via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Seasonal Collections -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold">Seasonal Collections</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="collection-card position-relative overflow-hidden rounded shadow">
+                        <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800&h=400&fit=crop" alt="Summer Collection" class="img-fluid w-100">
+                        <div class="collection-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                            <div class="text-center text-white">
+                                <h3 class="fw-bold mb-3">Summer Collection</h3>
+                                <a href="products.html?collection=summer" class="btn btn-light">Shop Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="collection-card position-relative overflow-hidden rounded shadow">
+                        <img src="https://images.unsplash.com/photo-1511884642898-4c92249e20b6?w=800&h=400&fit=crop" alt="Winter Collection" class="img-fluid w-100">
+                        <div class="collection-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                            <div class="text-center text-white">
+                                <h3 class="fw-bold mb-3">Winter Collection</h3>
+                                <a href="products.html?collection=winter" class="btn btn-light">Shop Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Highlights -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold">Our Trusted Brands</h2>
+            <div class="row g-4 align-items-center">
+                <div class="col-6 col-md-3 col-lg-2 text-center">
+                    <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=200&h=100&fit=crop" alt="Brand 1" class="img-fluid brand-logo">
+                </div>
+                <div class="col-6 col-md-3 col-lg-2 text-center">
+                    <img src="https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=200&h=100&fit=crop" alt="Brand 2" class="img-fluid brand-logo">
+                </div>
+                <div class="col-6 col-md-3 col-lg-2 text-center">
+                    <img src="https://images.unsplash.com/photo-1614680376593-902f74cf0d41?w=200&h=100&fit=crop" alt="Brand 3" class="img-fluid brand-logo">
+                </div>
+                <div class="col-6 col-md-3 col-lg-2 text-center">
+                    <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=200&h=100&fit=crop" alt="Brand 4" class="img-fluid brand-logo">
+                </div>
+                <div class="col-6 col-md-3 col-lg-2 text-center">
+                    <img src="https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=200&h=100&fit=crop" alt="Brand 5" class="img-fluid brand-logo">
+                </div>
+                <div class="col-6 col-md-3 col-lg-2 text-center">
+                    <img src="https://images.unsplash.com/photo-1614680376593-902f74cf0d41?w=200&h=100&fit=crop" alt="Brand 6" class="img-fluid brand-logo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials / Customer Reviews -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold">What Our Customers Say</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                            </div>
+                            <p class="card-text">"Amazing shopping experience! Fast delivery and great quality products recommended!"</p>
+                            <div class="d-flex align-items-center mt-3">
+                                <img src="https://i.pravatar.cc/150?img=47" alt="User" class="rounded-circle me-2" width="40" height="40">
+                                <div>
+                                    <strong>Sarah Johnson</strong>
+                                    <small class="d-block text-muted">Verified Buyer</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                            </div>
+                            <p class="card-text">"Best prices and excellent customer service. The return process was so easy!"</p>
+                            <div class="d-flex align-items-center mt-3">
+                                <img src="https://i.pravatar.cc/150?img=12" alt="User" class="rounded-circle me-2" width="40" height="40">
+                                <div>
+                                    <strong>Michael Chen</strong>
+                                    <small class="d-block text-muted">Verified Buyer</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-half text-warning"></i>
+                            </div>
+                            <p class="card-text">"Love the variety of products available. Found everything I needed in one place!"</p>
+                            <div class="d-flex align-items-center mt-3">
+                                <img src="https://i.pravatar.cc/150?img=33" alt="User" class="rounded-circle me-2" width="40" height="40">
+                                <div>
+                                    <strong>Emily Davis</strong>
+                                    <small class="d-block text-muted">Verified Buyer</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="fw-bold mb-3">Subscribe to Our Newsletter</h2>
+                    <p class="lead">Get the latest updates on new products, exclusive deals, and special offers!</p>
+                </div>
+                <div class="col-lg-6">
+                    <form id="newsletterForm" class="d-flex">
+                        <input type="email" class="form-control form-control-lg me-2" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-light btn-lg">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-3">
+                        <i class="bi bi-bag-heart-fill me-2"></i>ShopHub
+                    </h5>
+                    <p>Your one-stop destination for all your shopping needs. Quality products, best prices, and exceptional service.</p>
+                    <div class="social-links">
+                        <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h6 class="fw-bold mb-3">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white-50 text-decoration-none">Home</a></li>
+                        <li><a href="products.html" class="text-white-50 text-decoration-none">Products</a></li>
+                        <li><a href="about.html" class="text-white-50 text-decoration-none">About Us</a></li>
+                        <li><a href="contact.html" class="text-white-50 text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h6 class="fw-bold mb-3">Customer Service</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="faq.html" class="text-white-50 text-decoration-none">FAQ</a></li>
+                        <li><a href="shipping.html" class="text-white-50 text-decoration-none">Shipping Policy</a></li>
+                        <li><a href="returns.html" class="text-white-50 text-decoration-none">Returns</a></li>
+                        <li><a href="support.html" class="text-white-50 text-decoration-none">Support</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h6 class="fw-bold mb-3">Legal</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="privacy.html" class="text-white-50 text-decoration-none">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="text-white-50 text-decoration-none">Terms & Conditions</a></li>
+                        <li><a href="refund.html" class="text-white-50 text-decoration-none">Refund Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h6 class="fw-bold mb-3">Contact Info</h6>
+                    <ul class="list-unstyled">
+                        <li class="text-white-50"><i class="bi bi-geo-alt me-2"></i>123 Shopping St, City</li>
+                        <li class="text-white-50"><i class="bi bi-telephone me-2"></i>+1 234 567 890</li>
+                        <li class="text-white-50"><i class="bi bi-envelope me-2"></i>info@shophub.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 bg-white-50">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0 text-white-50">&copy; 2025 ShopHub. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0 text-white-50">Secure Payment | SSL Protected</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/home.js"></script>
+</body>
+</html>
+
